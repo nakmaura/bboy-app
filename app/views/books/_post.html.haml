@@ -1,0 +1,13 @@
+.post
+  .post-header
+  .post-main
+    - @books.each do |book|
+      = book.video
+      = book.style
+      = book.old
+      = book.crew
+
+  .post-form
+    .form
+      =link_to new_book_path do
+        新規投稿
