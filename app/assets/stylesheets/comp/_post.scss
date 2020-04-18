@@ -10,8 +10,47 @@
 
 .post-main{
   height: calc(100% - 160px);
+  width: 100%;
   background-color: #E3F3C2;
+  padding-bottom: 100px;
 }
+.post-group{
+  background-color:#99CCFF;
+  width: 400px;
+  height :100%;
+  margin: auto;
+  position: relative;
+  .more {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 2;
+    height: 100px;
+    width: 80px;
+    text-align: right;
+    &__arrow{
+      cursor: pointer;
+    }
+    
+  }
+  &__video{
+    position: absolute;
+    height: 25%;
+    width: 50%;
+    top: 30px;
+    right: 0;
+    left: 100px;
+    bottom: 0;
+    display: block;
+    background-color: #ffffff;
+    &__movie{
+      object-fit: fill;
+      width: 100%;
+      height: 100%;
+    }
+    }
+
+  }
 
 .post-form{
   height: 70px;

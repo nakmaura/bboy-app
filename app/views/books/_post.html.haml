@@ -1,13 +1,23 @@
 .post
   .post-header
   .post-main
-    - @books.each do |book|
-      = book.video
-      = book.style
-      = book.old
-      = book.crew
-
+    .post-group
+      - @books.each do |book|
+        .more
+          %span
+            = image_tag 'arrow_top.png',class: 'more__arrow'
+            %ul.more-list
+              %li
+                = link_to '削除',book_path(book),method: :delete
+        .post-group__video
+          = video_tag book.video.url,class: 'post-group__video__movie',controls: true
+        .post-group__style
+          = book.style
+        .post-group__crew
+          = book.crew
+        .post-group__old
+          = book.old
   .post-form
     .form
-      =link_to new_book_path do
+      = link_to new_book_path do
         新規投稿
