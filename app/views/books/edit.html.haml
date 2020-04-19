@@ -1,0 +1,6 @@
+.form-edit
+  = form_with model: @book,local: true do |f|
+    = f.text_field :style, class: 'edit-style' ,placeholder: 'スタイルの入力'
+    = f.text_field :crew, class: 'edit-crew',placeholder: '所属 crew名'
+    = f.text_field :old, class: 'edit-old',placeholder: '歴の入力'
+    = f.submit '編集を保存する', class: 'edit__btn'
