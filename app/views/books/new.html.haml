@@ -1,0 +1,9 @@
+.create-post
+  新規投稿ページ
+  .form
+    = form_with model: @book,local: true do |f|
+      = f.file_field :video,accept: 'video/*',class: 'form__video'
+      = f.text_field :style, class: 'form__style' ,placeholder: 'スタイルの入力'
+      = f.text_field :crew, class: 'crew',placeholder: '所属 crew名'
+      = f.text_field :old, class: 'old',placeholder: '歴の入力'
+      = f.submit '投稿する', class: 'form__btn'
