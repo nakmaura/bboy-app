@@ -2,23 +2,24 @@
   box-sizing: border-box;
 }
 
-.book{
+.wrapper{
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
-  display: flex;
   margin: 0;
   padding: 0;
+  background-color: #f5f5e1f8;
+}
+
+.book{
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding-top: 128px;
 }
 
 a{
   text-decoration: none;
   color: white;
-}
-
-.body{
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
