@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action
+  before_action :move_to_sign_in
   def index
     @books = Book.all
   end
@@ -30,6 +30,11 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:style,:crew,:old,:video)
+    params.require(:book).permit(:style,:crew,:old,:video).merge(user_id: current_user.id)
   end
+
+  def move_to_sign_in
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
 end

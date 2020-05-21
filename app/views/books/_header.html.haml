@@ -1,3 +1,6 @@
 .header
    = link_to new_user_session_path,class: "header-icon"do
       BBOY/BGIRL Community Site
+   - if user_signed_in?
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+      = current_user.name
