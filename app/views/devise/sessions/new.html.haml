@@ -10,9 +10,9 @@
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
             .field-label
-              = f.label :name
+              = f.label "Dancer Name"
             .field-input
-              = f.email_field :name, autofocus: true
+              = f.text_field :name, autofocus: true
             .field
               .field-label
                 = f.label :password
