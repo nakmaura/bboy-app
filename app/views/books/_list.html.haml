@@ -2,6 +2,7 @@
   .list-header
     BBOY/BGRIL一覧
   .list-main
-    .list-main__name
-      - @users.each do |u|
-        = u.name
+    - @users.each do |user|
+      .list-main__name
+        = link_to "#" ,class: "list-main__name__user" do
+          = "#{user.gender} #{user.name}"

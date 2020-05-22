@@ -12,4 +12,6 @@ class User < ApplicationRecord
   def email_changed?
     false
   end
+  enum gender: { "Bboy": 1, "Bgirl": 2}, _prefix: true
+
 end

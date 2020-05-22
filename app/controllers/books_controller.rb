@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   before_action :move_to_sign_in
   def index
     @books = Book.all
+    @users = User.all
   end
 
   def new
