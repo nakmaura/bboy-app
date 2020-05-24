@@ -20,6 +20,7 @@
         .post-group__old
           = book.old
   .post-form
-    .form
-      = link_to new_book_path do
-        新規投稿
+    - if current_user.id == @user.id
+      .form
+        = link_to new_book_path do
+          新規投稿

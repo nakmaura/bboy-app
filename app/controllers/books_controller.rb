@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
   before_action :move_to_sign_in
   def index
-    @books = Book.all
     @users = User.all
   end
 
@@ -18,7 +17,7 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     book.destroy
   end
-
+  
   def edit
     @book = Book.find(params[:id])
   end
