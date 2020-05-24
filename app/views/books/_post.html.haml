@@ -3,14 +3,15 @@
   .post-main
     .post-group
       - @books.each do |book|
-        .more
-          %span
-            = image_tag 'arrow_top.png',class: 'more__arrow'
-            %ul.more-list
-              %li
-                = link_to '編集',edit_book_path(book),class: "post-edit"
-              %li
-                = link_to '削除',book_path(book),method: :delete,class: "post-delete"
+        - if current_user.id == @user.id
+          .more
+            %span
+              = image_tag 'arrow_top.png',class: 'more__arrow'
+              %ul.more-list
+                %li
+                  = link_to '編集',edit_book_path(book),class: "post-edit"
+                %li
+                  = link_to '削除',book_path(book),method: :delete,class: "post-delete"
         .post-group__video
           = video_tag book.video.url,class: 'post-group__video__movie',controls: true
         .post-group__style
