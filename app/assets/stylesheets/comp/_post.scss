@@ -12,15 +12,16 @@
   height: calc(100% - 160px);
   width: 100%;
   background-color: #f5f5e1f8;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 .post-group{
   background-color:#afe5fc;
-  border: solid 3px sky;
-  width: 400px;
+  border: solid 3px #afe5fc;
+  width: 450px;
   height :100%;
   margin: auto;
   position: relative;
+  margin-bottom: 100px;
 
   .more {
     position: absolute;
@@ -41,8 +42,7 @@
     
   }
   &__video{
-    position: absolute;
-    height: 25%;
+    height: 45%;
     width: 50%;
     top: 30px;
     right: 0;
@@ -50,13 +50,23 @@
     bottom: 0;
     display: block;
     border: solid 3px #afe5fc;
+    margin: auto;
+    padding-top: 50px;
     &__movie{
       object-fit: fill;
       width: 100%;
       height: 100%;
+      }
     }
+    &__style{
+      float: right;
     }
-
+    &__crew{
+      float: right;
+    }
+    &__old{
+      float: right;
+    }
   }
 
 .post-form{

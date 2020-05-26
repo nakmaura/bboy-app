@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :move_to_sign_in
   def index
-    @users = User.all
+    @users = User.all.order("created_at DESC")
   end
 
   def new
@@ -10,14 +10,14 @@ class BooksController < ApplicationController
 
   def create 
     Book.create(book_params)
-    redirect_to root_path
+    redirect_to user_path(current_user)
   end
 
   def destroy
     book = Book.find(params[:id])
     book.destroy
   end
-  
+
   def edit
     @book = Book.find(params[:id])
   end
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   def update
     book = Book.find(params[:id])
     book.update(book_params)
-    redirect_to root_path
+    redirect_to user_path(current_user)
   end
 
   private
